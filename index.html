@@ -8,25 +8,29 @@
    <title>Compute SHA-1 from CSV in browser</title>
    <link rel="icon" type="image/x-icon" href="favicon.png">
    <style>
-      #options {
+      #options, #preview, #loading, #hashing {
          display: none;
       }
       table, th, td {
          border: 1px solid black;
          border-collapse: collapse;
       }
-      #preview {
-         display: none;
+      footer {
+         margin-top: 20px;
+         text-align: center;
       }
-      #loading {
-         display: none;
+      #privacyNotice {
+         color: red;
+         font-weight: bold;
+         margin-bottom: 10px;
       }
-      #hashing {
-         display: none;
-      }
+
    </style>
 </head>
 <body>
+   <div id="privacyNotice">
+      No data from the CSV file leaves your device. All processing is done locally.
+   </div>
    <h1>Choose a CSV file</h1>
    <form id="myForm">
       <input type="file" id="csvFile" accept=".csv" />
@@ -53,6 +57,14 @@
          <tbody id="previewTableBody"></tbody>
       </table>
    </div>
+   <footer>
+      <p>
+
+         <a href="https://github.com/cai4cai/sha1inbrowser/blob/main/README.md">Usage Notes</a> |
+         <a href="https://cai4cai.ml/terms/">Terms of Service</a> |
+         <a href="https://cai4cai.ml/privacy/">Privacy Policy</a> |
+         <a href="https://github.com/cai4cai/sha1inbrowser">View Source on GitHub</a> 
+      </p>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script>
       async function sha1(str) {
