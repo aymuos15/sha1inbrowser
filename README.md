@@ -1,6 +1,6 @@
-# SHA1 in Browser: Anonymised ID Generation
+# Pseudo-Anonymised ID Generation
 
-This web-based interface enables the use of the SHA-1 hashing algorithm on CSV files for the generation of pseudo-anonymised IDs, currently used for the AIMBraTS project. The application operates entirely client-side, ensuring that no data is transmitted outside of the local machine. To begin, simply open go to: [Compute SHA-1 from CSV in Browser](https://cai4cai.ml)
+This interface enables the use of the SHA-1 hashing algorithm on CSV files for the generation of pseudo-anonymised IDs, currently used for the AIMBraTS project. The application operates entirely client-side, ensuring that no data is transmitted outside of the local machine. To begin, simply go to: [Pseudo-Anonymised ID Generator](https://cai4cai.ml/sha1inbrowser/)
 
 ## Motivation
 
@@ -16,7 +16,7 @@ The key advantage of this approach to generating pseudo-anonymised IDs is that w
 Ensure each NHS number in your dataset is 10 digits long without any spaces. Errors in this data will lead to incorrect hashing.
 
 ### Step 1: Access the Application
-Navigate to [Compute SHA-1 from CSV in Browser](https://cai4cai.ml).
+Navigate to the [Pseudo-Anonymised ID Generator](https://cai4cai.ml/sha1inbrowser/).
 
 > **Note:** This HTML application, which is accessed and viewed via a web browser, runs locally on your own machine, and no data is transmitted outside of the local machine, when used. 
 
