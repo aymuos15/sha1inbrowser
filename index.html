@@ -58,14 +58,20 @@
          <tbody id="previewTableBody"></tbody>
       </table>
    </div>
+   <div id="hashInputContainer">
+      <h2>Hash Input</h2>
+      <input type="text" id="hashInput" placeholder="Enter text to hash" />
+      <button onclick="hashInput()">Hash</button>
+      <p id="hashOutput"></p>
+   </div>
    <footer>
       <p>
-
          <a href="https://github.com/cai4cai/sha1inbrowser/blob/main/README.md">Instructions for use</a> |
          <a href="https://cai4cai.ml/terms/">Terms of Service</a> |
          <a href="https://cai4cai.ml/privacy/">Privacy Policy</a> |
          <a href="https://github.com/cai4cai/sha1inbrowser">View Source on GitHub</a> 
       </p>
+   </footer>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script>
       async function sha1(str) {
@@ -74,6 +80,12 @@
          return Array.from(new Uint8Array(hash))
             .map(v => v.toString(16).padStart(2, '0'))
             .join('').slice(0, 10);
+      }
+
+      async function hashInput() {
+         const input = document.getElementById("hashInput").value;
+         const hash = await sha1(input);
+         document.getElementById("hashOutput").innerText = "Hash: " + hash;
       }
    </script>
    <script>
